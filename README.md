@@ -10,4 +10,5 @@ Requirements:
     - flask-sqalchemy
     - flask-migration
     - flask-login
-    _ other requirenments kindly go through the requirments.txt
+    _ other requirenments kindly go through the requirments.txt file 
+    
