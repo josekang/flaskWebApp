@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+  <h2>Contact Us</h2>
+  {% if success %}
+  <p>Thank you for contacting us. We will get back to you shortly. Stay happy-:)</p>
+  {% else %}
+    {% for message in form.name.errors %}
+    <div class="flash alert alert-danger">{{ message }}</div>
+    {% endfor %}
+
+    {% for message in form.email.errors %}
+    <div class="flash alert alert-danger">{{ message }}</div>
+    {% endfor %}
+
+    {% for message in form.subject.errors %}
+    <div class="flash alert alert-danger">{{ message }}</div>
+    {% endfor %}
+
+    {% for message in form.message.errors %}
+    <div class="flash alert alert-danger">{{ message }}</div>
+    {% endfor %}
+
+    <form action="{{ url_for('contact.contact') }}" method="POST">
+      {{ form.hidden_tag() }}
+      {{ form.name.label(class="form-control-plaintext") }}{{ form.name(class="col-sm-2 col-form-label") }}
+      {{ form.email.label(class="form-control-plaintext") }}{{ form.email(class="col-sm-2 col-form-label") }}
+      {{ form.subject.label(class="form-control-plaintext") }}{{ form.subject(class="col-sm-2 col-form-label") }}
+      {{ form.message.label(class="form-control-plaintext") }}{{ form.message(class="col-sm-2 col-form-label") }}<br>
+      {{ form.submit(class="btn btn-primary") }}
+
+    </form>
+
+
+  {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html"%}
+{% block content %}
+
+<div class="jumbotron">
+  <h5>Please enter the Identification number of the puppy you want to remove from the puppy adoption list</h5>
+  <form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.puppy_id.label }}{{ form.puppy_id(class="col-sm-2 col-form-label")}}
+    {{ form.submit(class="btn btn-primary") }}
+
+  </form>
+
+</div>
+
+{% endblock %}

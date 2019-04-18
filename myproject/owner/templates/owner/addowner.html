@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+  <h5>Please add the name of the owner of a puppy and the id of the puppy he or she owns</h5>
+  <form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.name.label(class="form-control-plaintext") }}{{ form.name(class="col-sm-2 col-form-label") }}<br>
+    {{ form.puppy_id.label(class="form-control-plaintext") }}{{ form.puppy_id(class="col-sm-2 col-form-label") }}<br>
+    {{ form.submit(class="btn btn-primary") }}
+
+  </form>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+  <h5>Please ensure to enter the correct information to ensure accuracy and trust worthiness: </h5>
+  <form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.name.label }}{{ form.name(class="col-sm-2 col-form-label") }}<br>
+    {{ form.submit(class="btn btn-primary") }}
+
+  </form>
+
+</div>
+{% endblock %}
